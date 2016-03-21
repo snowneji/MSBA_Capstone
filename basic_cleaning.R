@@ -1,0 +1,25 @@
+basic_clean = function(data){
+        data = gsub('[^[:alpha:]]',' ',data)
+        data = gsub('data analyst',' ',data)
+        data = gsub('data scientist',' ',data)
+        data = gsub('data engineer',' ',data)
+        data = gsub('business analyst',' ',data)
+        data = gsub('analyst',' ',data)
+        data = gsub('scientist',' ',data)
+        data = gsub('engineer',' ',data)
+        data = gsub('religion',' ',data)
+        data = gsub('sex',' ',data)
+        data = gsub('color',' ',data)
+        data = gsub('race',' ',data)
+        data = gsub('employment',' ',data)
+        data = gsub('religion',' ',data)
+        data = gsub('gender',' ',data)
+        data = gsub('equal opportunity',' ',data)
+        data = gsub('national',' ',data)
+        data = gsub('origin',' ',data)
+        data = gsub('job description',' ',data)
+        data = gsub('sexual orientation',' ',data)
+        data = gsub('veteran status',' ',data)
+        data       
+}
+
