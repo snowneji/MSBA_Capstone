@@ -31,4 +31,4 @@ train_data[train_data$trainning_label=='data engineer',]$trainning_label = 3
 
 
 
-write.csv(x=train_data,file='final_best_train.csv',sep=';',row.names=F)
+write.csv(x=train_data,file='final_best_train.csv',row.names=F)

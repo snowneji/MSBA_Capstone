@@ -2,6 +2,8 @@ print ('The basic clean function in this script performs basic cleaning.')
 print('It contains some customized trash words.')
 basic_clean = function(data){
         data = tolower(data)
+        data = gsub('r&b',' ',data)
+        data = gsub('r&d',' ',data)
         data = gsub('[^[:alpha:]]',' ',data)
         data = gsub('data analyst','',data)
         data = gsub('data scientist','',data)
@@ -26,6 +28,7 @@ basic_clean = function(data){
         data = gsub('year|years','',data)
         data = gsub('experience|experiences','',data)
         data = gsub('processes','process',data)
+        data = gsub(' r ',' rprogram ',data)
         data.frame(data)       
 }
 

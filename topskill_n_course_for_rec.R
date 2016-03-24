@@ -10,7 +10,7 @@ ds = c('data analysis',
        'sas',
        'hadoop',
        'data mining',
-       'r programming',
+       ' rprogram',
        'spss')
 da = c('data analysis',
        'excel',

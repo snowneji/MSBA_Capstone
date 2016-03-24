@@ -1,5 +1,5 @@
-match_course = function(person_skills,courseterm){
-        rec_course =sapply(person_skills, function(x){
+match_course = function(gap_skills,courseterm){
+        rec_course =sapply(gap_skills, function(x){
                 grep(x,courseterm)
         })
         

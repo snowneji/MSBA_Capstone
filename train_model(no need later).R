@@ -11,7 +11,7 @@ result = vali$trainning_label
 #model
 param <- list("objective" = "multi:softprob",
               "eval_metric" = "mlogloss",
-              "eta" = 0.2,
+              "eta" = 0.1,
               "num_class" = 4)
 
 bst.cv = xgb.cv(param=param,label=label, data = train2, nfold = 5, nrounds = 100,nthread=4,early.stop.round = 5)
