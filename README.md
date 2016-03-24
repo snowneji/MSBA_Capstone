@@ -16,7 +16,7 @@ Build a recommendation system to help aspiring data scientist to bridge their sk
 [Capstone_Spiders folder] (https://github.com/snowneji/MSBA_Capstone/tree/master/Capstone_Spiders)
 
 
-### b. Clean and process job posting data, build classification model to classify job posting into 4 categories: data scientists, data analysts, business analysts and data engineers using R. The accuracy of the initial model is 78%, still can be improved by performing further feature selection and model ensembles.
+### b. Clean and process job posting data, build classification model to classify job posting into 4 categories: data scientists, data analysts, business analysts and data engineers using R. The accuracy of the initial model is 78%, still can be improved by performing further feature engineering and ensemble.
 
 
 [basic_cleaning.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/basic_cleaning.R)
