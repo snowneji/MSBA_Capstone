@@ -19,35 +19,35 @@ Capstone_Spiders folder
 
 [basic_cleaning.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/basic_cleaning.R)
 
-corpus_clean.R
+[corpus_clean.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/corpus_clean.R)
 
-coursedata_cleaning(no need later).R
+[coursedata_cleaning(no need later).R] (https://github.com/snowneji/MSBA_Capstone/blob/master/coursedata_cleaning(no%20need%20later).R)
 
-train_data_cleaning(no need later).R
+[train_data_cleaning(no need later).R] (https://github.com/snowneji/MSBA_Capstone/blob/master/train_data_cleaning(no%20need%20later).R)
+
+[train_model(no need later).R ] (https://github.com/snowneji/MSBA_Capstone/blob/master/train_model(no%20need%20later).R)
 
 ## c. Test resume data using the classification model and classify each into one of the 4 categories mentioned above.
 
 Scripts:
 
-train_model(no need later).R
-
-test_model.R
+[test_model.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/test_model.R)
 
 ## d. Based on the classified result, each resume is compared with the top skills of the target title to identify the skill gaps.
 
 Scripts:
 
-topskill_n_course_for_rec.R
+[topskill_n_course_for_rec.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/topskill_n_course_for_rec.R)
 
 ## e. Recommend top rated online course to the person based on his/her skills gaps.
 
 Scripts:
 
-main script.R
+[main script.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/main%20script.R)
 
-match_course.R
+[match_course.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/match_course.R)
 
-select_course.R
+[select_course.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/select_course.R)
 
 ## f. Build an interactive data product which allows aspiring analytics professionals to pass their resumes through the app and receive recommended courses that help them to fill their skill gaps.
 
