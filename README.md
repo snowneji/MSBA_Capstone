@@ -1,14 +1,14 @@
-##MSBA Capstone Project:
+### MSBA Capstone Project:
 
 Recommendation System for Analytics Professionals’ Career Building
 
 
-###Objective:
+### Objective:
 
-To build a recommendation system to help aspiring data scientist to bridge their skill gaps.
+Build a recommendation system to help aspiring data scientist to bridge their skill gaps.
 
 
-## Approach:
+### Approach:
 
 ### a. Scrape online course information, job postings and resumes which are related to analytics professionals from multiple websites using Python Scrapy.
 
