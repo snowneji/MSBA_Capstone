@@ -29,19 +29,16 @@ Capstone_Spiders folder
 
 ## c. Test resume data using the classification model and classify each into one of the 4 categories mentioned above.
 
-Scripts:
 
 [test_model.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/test_model.R)
 
 ## d. Based on the classified result, each resume is compared with the top skills of the target title to identify the skill gaps.
 
-Scripts:
 
 [topskill_n_course_for_rec.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/topskill_n_course_for_rec.R)
 
 ## e. Recommend top rated online course to the person based on his/her skills gaps.
 
-Scripts:
 
 [main script.R] (https://github.com/snowneji/MSBA_Capstone/blob/master/main%20script.R)
 
@@ -51,7 +48,6 @@ Scripts:
 
 ## f. Build an interactive data product which allows aspiring analytics professionals to pass their resumes through the app and receive recommended courses that help them to fill their skill gaps.
 
-Scripts:
 
 In process
 
