@@ -16,9 +16,8 @@ Capstone_Spiders folder
 
 ## b. Clean and process job posting data, build classification model to classify job posting into 4 categories: data scientists, data analysts, business analysts and data engineers.
 
-Scripts:
 
-basic_cleaning.R
+basic_cleaning.R <https://github.com/snowneji/MSBA_Capstone/blob/master/basic_cleaning.R>
 
 corpus_clean.R
 
