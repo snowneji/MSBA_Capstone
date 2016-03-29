@@ -3,28 +3,21 @@
 
 #Corpus and cleaning function
 print ('This script contains the function which creates corpus, performs n-gram and creates dtm based on the incoming data')
-corpusclean = function(data,sparse=0.96,ng_min=1,ng_max=3){
+corpusclean = function(data,sparse=0.96){
         library(tm)
         library(slam)
-        library(RWeka)
+        #  library(RWeka)
         library(Matrix)
-        desc = data
-        myCorpus = Corpus(DataframeSource(desc))
-        myCorpus = tm_map(myCorpus, content_transformer(tolower))
-        myCorpus = tm_map(myCorpus, content_transformer(removeNumbers))
-        myCorpus = tm_map(myCorpus, content_transformer(removeWords), stopwords('english'))
-        #stop2 = as.vector(stopwords('SMART'))
-        myCorpus = tm_map(myCorpus, content_transformer(removeWords),stop2) 
-        #myCorpus = tm_map(myCorpus, stemDocument)
-        myCorpus = tm_map(myCorpus, content_transformer(stripWhitespace))
-        myCorpus = tm_map(myCorpus, content_transformer(PlainTextDocument))
-        options(mc.cores=1)
-        min = ng_min
-        max = ng_max
-        ngramTokenizer <- function(x,ng_min2=min,ng_max2=max) {
-                NGramTokenizer(x, Weka_control(min=ng_min2, max=ng_max2))
-        }
-        dtm = DocumentTermMatrix(myCorpus,control=list(tokenize =ngramTokenizer)) 
+        library(quanteda)
+        myCorpus = Corpus(DataframeSource(data))
+        myCorpus = corpus(myCorpus)
+        mydfm <- dfm(myCorpus, 
+                     ignoredFeatures = c(stopwords('english')),
+                     toLower = T,
+                     removeNumbers = TRUE,
+                     removePunct = T,
+                     ngrams=1:3)
+        dtm = as.DocumentTermMatrix(mydfm)
         dtm2 = removeSparseTerms(dtm,sparse = sparse)
         dtm2
         
