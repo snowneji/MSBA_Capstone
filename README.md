@@ -51,7 +51,7 @@ Build a recommendation system to help aspiring data scientist to bridge their sk
 ### f. Build an interactive data product which allows aspiring analytics professionals to pass their resumes through the app and receive recommended courses that help them to fill their skill gaps using R.
 
 
-In process
+[Recommendation System Shiny App] (https://snowneji.shinyapps.io/ana_rec_sys/)
 
 
 
