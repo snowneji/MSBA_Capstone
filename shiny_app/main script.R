@@ -32,25 +32,28 @@ maintitle = function(resume){
         mymd = xgb.load('xgboost_model')
         source('test_model.R')
         result_title = test_md(res,mymd)
-        if (result_title == "ds"){
-                title = 'Data Scientist'
+        
+  
+        if (row.names(result_title)[1] == "ds"){
+                row.names(result_title)[1] = 'Data Scientist'
         }
-        if (result_title == "da"){
-                title = 'Data Analyst'
+        if (row.names(result_title)[1] == 'da'){
+                row.names(result_title)[1] = 'Data Analyst'
         }
-        if (result_title == "ba"){
-                title = 'Business Analyst'
+        if (row.names(result_title)[1]=='ba'){
+                row.names(result_title)[1] = 'Business Analyst'
         }
-        if (result_title == "de"){
-                title = 'Data Engineer'
+        if (row.names(result_title)[1]=='de'){
+                row.names(result_title)[1] = 'Data Engineer'
         }
-        title
+        result_title
 }  
         
         
         
-maincourse = function(title,resume, item){
+maincourse = function(title,resume){
         library(data.table)
+        title = row.names(title)[1]
         
         #################################
         ######skills for the title#######
@@ -84,7 +87,7 @@ maincourse = function(title,resume, item){
         #########reparse resume to match skills#
         #######################################
         res_match = basic_clean(resume)
-        res_match = corpusclean(res_match,sparse=0.96)
+        res_match = corpusclean(res_match,sparse=0.999)
         res_match = as.data.frame(as.matrix(res_match))
         names_for_gap_skills = names(res_match)
         names_for_gap_skills = sapply(names_for_gap_skills,function(x){
@@ -96,7 +99,7 @@ maincourse = function(title,resume, item){
         ######gap skills################
         ################################
         gap_skills = sapply(position_skills,function(x){
-                x %in% names_for_gap_skills
+                trimws(x) %in% names_for_gap_skills
         })
         ###here would be the output for app user
         gap_skills = names(gap_skills[gap_skills=='FALSE'])
@@ -117,7 +120,7 @@ maincourse = function(title,resume, item){
         #################################
         source('select_course.R')
         final_rec = select_course(course_id = course_id,course_data = coursedata)
-        final_rec = final_rec[1:item,]
+        final_rec = arrange(final_rec,desc(course_rating))
         final_rec
               
 }

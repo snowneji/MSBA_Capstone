@@ -35,7 +35,7 @@ test_md = function(test_res, model, n_result=1){
         row.names(final_res_data)<-c('ds','da','ba','de')
         final_res_data<-t(final_res_data)
         final_res_data <- round(final_res_data,2)
-        final_res_data2<-apply(final_res_data,1, function(x) names(sort(x,decreasing = T))[1:n_result] )
+        final_res_data2<-apply(final_res_data,1, function(x) sort(x,decreasing = T)) 
         final_res_data2
 }
 
