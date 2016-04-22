@@ -3,7 +3,7 @@
 
 #Corpus and cleaning function
 print ('This script contains the function which creates corpus, performs n-gram and creates dtm based on the incoming data')
-corpusclean = function(data,sparse=0.96){
+corpusclean = function(data,sparse=0.96,ng_min = 1,ng_max = 3){
         library(tm)
         library(slam)
         #  library(RWeka)
@@ -12,11 +12,11 @@ corpusclean = function(data,sparse=0.96){
         myCorpus = Corpus(DataframeSource(data))
         myCorpus = corpus(myCorpus)
         mydfm <- dfm(myCorpus, 
-                     ignoredFeatures = c(stopwords('english')),
+                     ignoredFeatures = c(stopwords('english'),stopwords('SMART')),
                      toLower = T,
-                     removeNumbers = TRUE,
-                     removePunct = T,
-                     ngrams=1:3)
+                     removeNumbers = T,
+                     stem = T,
+                     ngrams=ng_min:ng_max)
         dtm = as.DocumentTermMatrix(mydfm)
         dtm2 = removeSparseTerms(dtm,sparse = sparse)
         dtm2

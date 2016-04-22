@@ -53,12 +53,13 @@ maintitle = function(resume){
         
 maincourse = function(title,resume){
         library(data.table)
-        title = row.names(title)[1]
         
         #################################
         ######skills for the title#######
         ################################
         source('topskill_n_course_for_rec.R')
+        
+        title = row.names(title)[1]
         
         if (title == "Data Scientist"){
                 title = 'ds'
@@ -87,8 +88,9 @@ maincourse = function(title,resume){
         #########reparse resume to match skills#
         #######################################
         res_match = basic_clean(resume)
-        res_match = corpusclean(res_match,sparse=0.999)
+        res_match = corpusclean(res_match,sparse=0.96)
         res_match = as.data.frame(as.matrix(res_match))
+        names(res_match) = gsub('_',' ',names(res_match))
         names_for_gap_skills = names(res_match)
         names_for_gap_skills = sapply(names_for_gap_skills,function(x){
                 a = unlist(strsplit(x,split = ' '))
@@ -98,14 +100,20 @@ maincourse = function(title,resume){
         #################################
         ######gap skills################
         ################################
-        gap_skills = sapply(position_skills,function(x){
-                trimws(x) %in% names_for_gap_skills
+        find_gap_skills = sapply(position_skills,function(x){
+                x %in% names_for_gap_skills
         })
         ###here would be the output for app user
-        gap_skills = names(gap_skills[gap_skills=='FALSE'])
+        gap_skills = names(find_gap_skills[find_gap_skills=='FALSE'])
+        have_skills = names(find_gap_skills[find_gap_skills=='TRUE'])
         
         # refer back to position skills
         gap_skills = position_skills[which(names(position_skills) %in% gap_skills )]
+        
+        gap_skills
+}
+
+finalcourse = function(gap_skills){
         
         ##################################
         ######find course id to rec#######
@@ -120,7 +128,6 @@ maincourse = function(title,resume){
         #################################
         source('select_course.R')
         final_rec = select_course(course_id = course_id,course_data = coursedata)
-        final_rec = arrange(final_rec,desc(course_rating))
         final_rec
               
 }
