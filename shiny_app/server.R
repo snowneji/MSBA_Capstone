@@ -5,8 +5,7 @@ library(googlesheets)
 library(wordcloud)
 
 
-cl_id = '612868658405-bi61ic85rg0b0048qq7ud2plo77osi4e.apps.googleusercontent.com'
-cl_sec = '3jGCJuJo5L8TqJ4R0XSXRkxq'
+
 # 
 options("googlesheets.shiny.client_id" = cl_id)
 options("googlesheets.shiny.client_secret" = cl_sec)
